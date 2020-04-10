@@ -1,0 +1,24 @@
+{
+  "name": "discord-bot",
+  "version": "1.0.0",
+  "description": "Coolest discord bot",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheSenPie/discord-bot.git"
+  },
+  "author": "Smbat Voskanyan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TheSenPie/discord-bot/issues"
+  },
+  "homepage": "https://github.com/TheSenPie/discord-bot#readme",
+  "dependencies": {
+    "discord.js": "^12.1.1",
+    "nodemon": "^2.0.3"
+  }
+}
