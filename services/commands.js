@@ -1,8 +1,11 @@
 require('dotenv').config();
 
 const _ = require("lodash");
-const stickers = require("./stickers");
-const lyrics = require("./lyrics");
+const path = require('path');
+
+const stickers = require(path.join(__dirname, "/stickers"));
+const lyrics = require(path.join(__dirname, "/lyrics"));
+const ass = require(path.join(__dirname, "/ass"));
 
 module.exports = {
     pass: function (receivedMessage) {
@@ -20,21 +23,7 @@ module.exports = {
                 receivedMessage.reply(new Date().toString());
                 break;
             case "poop":
-                let poop = "```" + `
-				░░░░░░░░░░░█▀▀░░█░░░░░░
-				░░░░░░▄▀▀▀▀░░░░░█▄▄░░░░
-				░░░░░░█░█░░░░░░░░░░▐░░░
-				░░░░░░▐▐░░░░░░░░░▄░▐░░░
-				░░░░░░█░░░░░░░░▄▀▀░▐░░░
-				░░░░▄▀░░░░░░░░▐░▄▄▀░░░░
-				░░▄▀░░░▐░░░░░█▄▀░▐░░░░░
-				░░█░░░▐░░░░░░░░▄░█░░░░░
-				░░░█▄░░▀▄░░░░▄▀▐░█░░░░░
-				░░░█▐▀▀▀░▀▀▀▀░░▐░█░░░░░
-				░░▐█▐▄░░▀░░░░░░▐░█▄▄░░░
-				░░░▀▀░▄ ██▄░░░▐▄▄▄▀░░░░
-            `+"```";
-                receivedMessage.channel.send(_.replace(poop, /\t/g, ""));
+                ass.poop(receivedMessage);
                 break;
             case "lyrics":
                 let query = _.join(commands.slice(1), ' ');
@@ -44,7 +33,10 @@ module.exports = {
                 receivedMessage.reply('Fuck you');
                 break;
             default:
-                receivedMessage.channel.send('Seems you wrote a wrong command. Type $help to see commands');
+                if(command == "stehan" && commands[1])
+                    stickers.send("stehan", commands[1], receivedMessage);
+                else
+                    receivedMessage.channel.send('Seems you wrote a wrong command. Type $help to see commands');
         }
     }
 }
