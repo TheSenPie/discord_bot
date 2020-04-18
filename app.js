@@ -5,6 +5,9 @@ require('dotenv').config();
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
+const path = require('path');
+global.appRoot = path.resolve(__dirname);
+
 const commands = require('./services/commands');
 
 client.on("ready", () => {
