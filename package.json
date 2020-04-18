@@ -20,6 +20,7 @@
   "dependencies": {
     "axios": "^0.19.2",
     "discord.js": "^12.1.1",
+    "dotenv": "^8.2.0",
     "happi-dev-sdk": "^1.0.26",
     "lodash": "^4.17.15"
   },
