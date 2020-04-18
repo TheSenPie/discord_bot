@@ -1,7 +1,7 @@
 const _ = require("lodash");
 
 module.exports = {
-    poop: (receivedMessage) => {
+    poop: (receivedMessage, name = " ██") => {
         let poop = "```" + `
 				░░░░░░░░░░░█▀▀░░█░░░░░░
 				░░░░░░▄▀▀▀▀░░░░░█▄▄░░░░
@@ -14,7 +14,7 @@ module.exports = {
 				░░░█▄░░▀▄░░░░▄▀▐░█░░░░░
 				░░░█▐▀▀▀░▀▀▀▀░░▐░█░░░░░
 				░░▐█▐▄░░▀░░░░░░▐░█▄▄░░░
-				░░░▀▀░▄ ██▄░░░▐▄▄▄▀░░░░
+				░░░▀▀░▄${name}▄░░░▐▄▄▄▀░░░░
             `+"```";
         receivedMessage.channel.send(_.replace(poop, /\t/g, ""));
     }

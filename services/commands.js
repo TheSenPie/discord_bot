@@ -23,7 +23,7 @@ module.exports = {
                 receivedMessage.reply(new Date().toString());
                 break;
             case "poop":
-                ass.poop(receivedMessage);
+                ass.poop(receivedMessage, commands[1]);
                 break;
             case "lyrics":
                 let query = _.join(commands.slice(1), ' ');
