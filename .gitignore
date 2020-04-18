@@ -104,4 +104,4 @@ dist
 .tern-port
 
 # Discord access_token
-config.json
+.env
