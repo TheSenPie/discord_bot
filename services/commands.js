@@ -35,6 +35,8 @@ module.exports = {
             default:
                 if(command == "stehan" && commands[1])
                     stickers.send("stehan", commands[1], receivedMessage);
+                else if(command == "volk" && commands[1])
+                    stickers.send("volk", commands[1], receivedMessage);
                 else
                     receivedMessage.channel.send('Seems you wrote a wrong command. Type $help to see commands');
         }
