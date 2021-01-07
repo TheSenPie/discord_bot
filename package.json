@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/TheSenPie/discord-bot#readme",
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "discord.js": "^12.1.1",
     "dotenv": "^8.2.0",
     "happi-dev-sdk": "^1.0.26",
